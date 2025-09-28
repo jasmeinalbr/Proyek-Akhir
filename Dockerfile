@@ -21,4 +21,7 @@ RUN echo '#!/bin/bash \n\n\
     "$@"' > /usr/bin/tf_serving_entrypoint.sh \
     && chmod +x /usr/bin/tf_serving_entrypoint.sh
 
+# Expose port untuk REST API
+EXPOSE ${PORT}
+
 ENTRYPOINT ["/usr/bin/tf_serving_entrypoint.sh"]
