@@ -1,5 +1,3 @@
-| Web app | Tautan web app yang digunakan untuk mengakses model serving. Contoh: [nama-model](https://model-resiko-kredit.herokuapp.com/v1/models/model-resiko-kredit/metadata)|
-
 # Submission 1: Adult Income Prediction
 
 Nama:  Jasmein Al-baar Putri Rus'an
@@ -15,6 +13,5 @@ Username dicoding: jasmeinalbaar
 | Metrik evaluasi | Evaluasi menggunakan TFMA dengan metrik: <br> - BinaryAccuracy (dengan threshold) <br> - AUC <br> - Precision <br> - Recall <br> - ExampleCount |
 | Performa model | Model mencapai Accuracy = 85.0%, AUC = 90.2%, Precision = 72.1%, dan Recall = 62.9% pada data evaluasi (6,610 contoh). Hasil ini menunjukkan model cukup baik dalam membedakan kategori pendapatan (>50K dan <=50K), meskipun masih ada ruang peningkatan terutama pada recall. |
 | Opsi deployment | Model disiapkan untuk *serving* menggunakan TensorFlow Serving + Docker, kemudian di-*deploy* ke Railway. |
-| Web app | *(belum diisi, tambahkan link endpoint Railway misalnya: `https://adult-income-ml.railway.app/v1/models/adult_income/metadata`)* |
-| Monitoring | Monitoring dilakukan menggunakan Prometheus untuk mengumpulkan metrik model, dengan rencana integrasi Grafana sebagai visualisasi performa dan kesehatan model. |
-
+| Web app | [income-prediction-model](https://income-prediction-model-production-3bbd.up.railway.app/v1/models/income-prediction-model/metadata) |
+| Monitoring | Monitoring dilakukan menggunakan Prometheus untuk memonitor metrik dari model yang telah dideploy, seperti jumlah permintaan dan statusnya |

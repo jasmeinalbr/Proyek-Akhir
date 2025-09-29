@@ -8,6 +8,6 @@ scrape_configs:
   - job_name: "prometheus"
     scrape_interval: 5s 
     metrics_path: /monitoring/prometheus/metrics 
-    scheme: "https" 
+    scheme: "https"
     static_configs:
-      - targets: ['proyek-akhir-mlops-production.up.railway.app']
+      - targets: ['income-prediction-model-production-3bbd.up.railway.app']
