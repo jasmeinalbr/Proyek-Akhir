@@ -82,7 +82,7 @@ def get_serve_tf_examples_fn(model, tf_transform_output):
         feature_spec = tf_transform_output.transformed_feature_spec().copy()
         # Pop label jika ada, karena untuk inferensi
         feature_spec.pop(transformed_name("income"), None)
-        
+
         # Parse dengan transformed_feature_spec
         parsed_features = tf.io.parse_example(serialized_tf_examples, feature_spec)
 
@@ -91,7 +91,7 @@ def get_serve_tf_examples_fn(model, tf_transform_output):
 
         # Susun input model dengan urutan yang sama seperti di get_model
         model_inputs = []
-        for key in CATEGORICAL_FEATURES.keys():
+        for key in CATEGORICAL_FEATURES:
             transformed_key = transformed_name(key)
             if transformed_key not in parsed_features:
                 raise ValueError(f"Missing transformed feature: {transformed_key}")

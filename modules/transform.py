@@ -5,14 +5,14 @@ import tensorflow_transform as tft
 
 # Categorical features and approximate vocab size (+1 buffer for OOV)
 CATEGORICAL_FEATURES = {
-    "workclass": 9,        # Private, Self-emp, Govt, etc.
-    "education": 16,       # 16 unique education levels
-    "marital.status": 7,   # Married, Divorced, etc.
-    "occupation": 15,      # Occupation types
-    "relationship": 6,     # Husband, Wife, etc.
-    "race": 5,             # White, Black, etc.
-    "sex": 2,              # Male, Female
-    "native.country": 42   # Countries
+    "workclass": 9,           # Private, Self-emp, Govt, etc.
+    "education": 16,          # 16 unique education levels
+    "marital.status": 7,      # Married, Divorced, etc.
+    "occupation": 15,         # Occupation types
+    "relationship": 6,        # Husband, Wife, etc.
+    "race": 5,                # White, Black, etc.
+    "sex": 2,                 # Male, Female
+    "native.country": 42      # Countries
 }
 
 # Numerical features

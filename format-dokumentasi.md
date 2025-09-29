@@ -1,17 +1,4 @@
-
-
-| | Deskripsi |
-| ----------- | ----------- |
-| Dataset | [nama dataset](https://www.kaggle.com/) |
-| Masalah | Deskripsi masalah yang di angkat |
-| Solusi machine learning | Deskripsi solusi machine learning yang akan dibuat |
-| Metode pengolahan | Deskripsi metode pengolahan data yang digunakan |
-| Arsitektur model | Deskripsi arsitektur model yang diguanakan |
-| Metrik evaluasi | Deksripsi metrik yang digunakan untuk mengevaluasi performa model |
-| Performa model | Deksripsi performa model yang dibuat |
-| Opsi deployment | Deksripsi tentang opsi deployment |
 | Web app | Tautan web app yang digunakan untuk mengakses model serving. Contoh: [nama-model](https://model-resiko-kredit.herokuapp.com/v1/models/model-resiko-kredit/metadata)|
-| Monitoring | Deksripsi terkait hasil monitoring dari model serving |
 
 # Submission 1: Adult Income Prediction
 
@@ -26,8 +13,8 @@ Username dicoding: jasmeinalbaar
 | Metode pengolahan | Data diproses menggunakan `Transform` dengan `tensorflow_transform` (tft). <br> - Categorical features di-*encode* menggunakan `tft.compute_and_apply_vocabulary` + one-hot encoding. <br> - Numerical features dinormalisasi dengan `tft.scale_to_0_1`. <br> - Label `income` diubah menjadi biner (0 = <=50K, 1 = >50K). |
 | Arsitektur model | Model dibangun menggunakan `tf.keras.Sequential` dengan lapisan: <br> - Input layer: gabungan categorical + numerical features. <br> - Dense layer 1: ReLU, units dituning (64–256). <br> - Dense layer 2: ReLU, units dituning (16–128). <br> - Output layer: Dense(1, sigmoid). <br> Optimizer: Adam, Loss: Binary Crossentropy, Metrik: Binary Accuracy. |
 | Metrik evaluasi | Evaluasi menggunakan TFMA dengan metrik: <br> - BinaryAccuracy (dengan threshold) <br> - AUC <br> - Precision <br> - Recall <br> - ExampleCount |
-| Performa model | *(belum diisi, tambahkan hasil akurasi/precision/recall/AUC dari evaluasi TFMA)* |
+| Performa model | Model mencapai Accuracy = 85.0%, AUC = 90.2%, Precision = 72.1%, dan Recall = 62.9% pada data evaluasi (6,610 contoh). Hasil ini menunjukkan model cukup baik dalam membedakan kategori pendapatan (>50K dan <=50K), meskipun masih ada ruang peningkatan terutama pada recall. |
 | Opsi deployment | Model disiapkan untuk *serving* menggunakan TensorFlow Serving + Docker, kemudian di-*deploy* ke Railway. |
 | Web app | *(belum diisi, tambahkan link endpoint Railway misalnya: `https://adult-income-ml.railway.app/v1/models/adult_income/metadata`)* |
-| Monitoring | Logging model dilakukan dengan TensorBoard. <br> Hyperparameter tuning menggunakan `KerasTuner`. <br> Rencana integrasi monitoring ke Grafana untuk observabilitas. |
+| Monitoring | Monitoring dilakukan menggunakan Prometheus untuk mengumpulkan metrik model, dengan rencana integrasi Grafana sebagai visualisasi performa dan kesehatan model. |
 
